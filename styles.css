@@ -1,0 +1,419 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+/* Header - Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: cyan;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 8px 15px;
+    transition: color 0.3s;
+}
+
+/* Underline Hover Effect */
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: cyan;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+    color: cyan;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 10%;
+    background: linear-gradient(to right, #1e1e2e, #28293e);
+    color: #fff;
+}
+
+/* Hero Content - Left Side */
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 span {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: #ff9800;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #e68900;
+}
+
+/* Hero Image - Center */
+.hero-image {
+    flex: 1;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Sections */
+section {
+    padding: 4rem 10%;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Project Cards */
+.project {
+    background: rgba(34, 34, 34, 0.8);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #000;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills Section */
+.skills-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.skills-list li {
+    background: rgba(34, 34, 34, 0.8);
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.skills-list li:hover {
+    transform: scale(1.1);
+    background: cyan;
+    color: black;
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+#contact {
+    text-align: center;
+    padding: 4rem 10%;
+    background: #1f1f1f;
+    border-radius: 10px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+#contact-form button {
+    padding: 10px;
+    background: cyan;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background: #00a0a0;
+}
+/* Section Styling */
+#certificates {
+    text-align: center;
+    padding: 40px;
+    background: #333;
+}
+
+/* Certificate Card */
+.certificate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.certificate:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Certificate Image */
+.certificate img {
+    max-width: 120px;
+    border-radius: 5px;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.certificate:hover img {
+    transform: scale(1.1);
+}
+
+/* Certificate Details */
+.cert-details {
+    text-align: left;
+}
+
+.cert-details h3 {
+    margin: 0;
+    color: #333;
+}
+
+.cert-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.cert-details a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.cert-details a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.close:hover {
+    color: red;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <title>Backend Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2 class="logo">Back<span>endDev</span></h2>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificate</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Kurt Paul</span></h1>
+            <p>Backend Developer | SQL & Python Expert</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+        <div class="hero-image">
+            <img src="Kurt.png" alt="Kurt Paul">
+        </div>
+    </section>
+    
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a passionate backend developer with experience in building scalable and efficient web applications.
+            I specialize in Python, Flask, and MySQL, focusing on designing and optimizing database structures, 
+            API development, and backend logic implementation. My goal is to create fast, secure, and reliable systems.
+        </p>
+        <h3>Skills & Technologies</h3>
+        <ul class="skills-list">
+            <li>Python (Flask, Django)</li>
+            <li>SQL (MySQL, PostgreSQL)</li>
+            <li>REST API Development</li>
+            <li>Authentication & Security</li>
+            <li>Cloud Services (AWS, Firebase)</li>
+            <li>Version Control (Git, GitHub)</li>
+        </ul>
+    </section>
+    
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="Project1.png" alt="Scholarship Recommendation System" width="100">
+            <h3>Scholarship Recommendation System</h3>
+            <p>A Python Flask-based web app that recommends scholarships based on academic performance.</p>
+        </div>
+        <div class="project">
+            <img src="Job.png" alt="Job Portal" width="100">
+            <h3>Cyber Cafe Management System</h3>
+            <p>A full-stack system managing user who finds job.</p>
+        </div>
+    </section>
+    
+    <section id="certificates">
+        <h2>Certificate</h2>
+        
+        <div class="certificate" onclick="openModal()">
+            <img src="cert.png" alt="SQL Certificate" id="cert-img">
+            <div class="cert-details">
+                <h3>SQL for creating and managing data</h3>
+                <p><strong>Issued by:</strong> Udemy (Google)</p>
+                <p><strong>Date:</strong> January 8 2024</p>
+                <a href="https://www.udemy.com/share/105j623@hHXPV-ioGtWSRt8UIE7n-fWBHgmk92ucf6-NrJrCpRfBp1vkZdeOdd0lIWdGpvc8kg==/" target="_blank">Verify Certificate</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal for Full-Screen Certificate -->
+    <div id="cert-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="full-cert">
+    </div>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+        </form>
+        <p id="status-message"></p>
+    </section>
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Kurt Paul. All rights reserved.</p>
+    </footer>
+</body>
+</html>
