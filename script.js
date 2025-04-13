@@ -49,3 +49,34 @@ function openModal() {
 function closeModal() {
     document.getElementById("cert-modal").style.display = "none";
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".project img");
+    const lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox");
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = document.createElement("img");
+    lightbox.appendChild(lightboxImage);
+
+    const closeButton = document.createElement("span");
+    closeButton.classList.add("close");
+    closeButton.textContent = "×";
+    lightbox.appendChild(closeButton);
+
+    images.forEach((image) => {
+        image.addEventListener("click", () => {
+            lightboxImage.src = image.src;
+            lightbox.style.display = "flex";
+        });
+    });
+
+    closeButton.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+});
